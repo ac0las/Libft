@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acolas-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 16:23:02 by acolas-l          #+#    #+#             */
-/*   Updated: 2023/10/17 11:13:43 by acolas-l         ###   ########.fr       */
+/*   Created: 2023/10/17 13:45:58 by acolas-l          #+#    #+#             */
+/*   Updated: 2023/10/17 14:20:14 by acolas-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
+#include <libft.h>
 
-//#include<stdio.h>
+char	*ft_strdup(const char *s1)
+{
+	size_t	len;
+	char	*s2;
 
-int	ft_isdigit(int c)
-{
-	if ((c >= '0' && c <= '9'))
-		return (1);
-	return (0);
+	len = ft_strlen(s1);
+	s2 = (char *)malloc(len);
+	if (s2 != NULL)
+		ft_strlcpy(s2, s1, len);
+	return (s2);
 }
-/*
-int main(void)
-{
-	if (ft_isdigit(8) == 1)
-		printf("true");
-	else
-		printf("false");
-	return(0);
-}
-*/

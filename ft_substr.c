@@ -1,30 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acolas-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 16:23:02 by acolas-l          #+#    #+#             */
-/*   Updated: 2023/10/17 11:13:43 by acolas-l         ###   ########.fr       */
+/*   Created: 2023/10/17 14:25:49 by acolas-l          #+#    #+#             */
+/*   Updated: 2023/10/17 14:28:01 by acolas-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include<stdio.h>
-
-int	ft_isdigit(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if ((c >= '0' && c <= '9'))
-		return (1);
-	return (0);
-}
-/*
-int main(void)
-{
-	if (ft_isdigit(8) == 1)
-		printf("true");
-	else
-		printf("false");
-	return(0);
-}
-*/
+	
