@@ -6,9 +6,11 @@
 /*   By: acolas-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:27:20 by acolas-l          #+#    #+#             */
-/*   Updated: 2023/10/24 16:46:21 by acolas-l         ###   ########.fr       */
+/*   Updated: 2023/11/08 18:31:32 by acolas-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
@@ -22,3 +24,4 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 			f(i++, s++);
 		}
 	}
+}

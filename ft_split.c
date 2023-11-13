@@ -6,7 +6,7 @@
 /*   By: acolas-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:43:49 by acolas-l          #+#    #+#             */
-/*   Updated: 2023/10/20 18:03:16 by acolas-l         ###   ########.fr       */
+/*   Updated: 2023/11/08 17:58:06 by acolas-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,62 +33,62 @@ static int	count_words(char const *s, char c)
 	return (count);
 }
 
-static char	*get_next_word(char const *s, char c)
+static size_t	word_len(char const *s, char c)
 {
-	int		i;
-	char	*word;
+	size_t	i;
 
 	i = 0;
-	while (s[i] && s[i] != c)
+	while (*(s + i) && *(s + i) != c)
 		i++;
-	word = (char *)malloc((i + 1) * sizeof(char));
-	if (word == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i] && s[i] != c)
+	return (i);
+}
+
+static void	free_array_mem(size_t i, char **array)
+{
+	while (i > 0)
 	{
-		word[i] = s[i];
+		i--;
+		free(array[i]);
+	}
+	free(array);
+}
+
+static char	**split(char const *s, char c, char **array, size_t words_count)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (i < words_count)
+	{
+		while (*(s + j) && *(s + j) == c)
+			j++;
+		array[i] = ft_substr(s, j, word_len(&*(s + j), c));
+		if (!array[i])
+		{
+			free_array_mem(i, array);
+			return (NULL);
+		}
+		while (*(s + j) && *(s + j) != c)
+			j++;
 		i++;
 	}
-	word[i] = '\0';
-	return (word);
+	array[i] = NULL;
+	return (array);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
-	int		n_word;
-	int		i;
+	char	**array;
+	size_t	words;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
-	n_word = count_words(s, c);
-	result = (char **)malloc((n_word + 1) * sizeof(char *));
-	if (result == NULL)
+	words = count_words(s, c);
+	array = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!array)
 		return (NULL);
-	i = 0;
-	while (*s)
-	{
-		if (*s != c)
-		{
-			result [i] = get_next_word(s, c);
-			if (result[i] == NULL)
-			{
-				while (i > 0)
-				{
-					i--;
-					free(result[i]);
-				}
-				free(result);
-				return (NULL);
-			}
-			i++;
-			while (*s && *s != c)
-				s++;
-		}
-		else
-			s++;
-	}
-	result[i] = NULL;
-	return (result);
-}	
+	array = split(s, c, array, words);
+	return (array);
+}
