@@ -6,7 +6,7 @@
 /*   By: acolas-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:38:55 by acolas-l          #+#    #+#             */
-/*   Updated: 2023/11/15 17:19:57 by acolas-l         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:32:19 by acolas-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
-int		ft_alnum(int c);
+int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
