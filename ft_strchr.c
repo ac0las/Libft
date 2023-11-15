@@ -6,7 +6,7 @@
 /*   By: acolas-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:35:40 by acolas-l          #+#    #+#             */
-/*   Updated: 2023/10/29 12:46:20 by acolas-l         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:52:14 by acolas-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	p = (char *)s;
 	while (*p != '\0')
 	{
-		if (*p == c)
+		if (*p == (char)c)
 			return (p);
 		p++;
 	}
+	if (*p == (char)c)
+		return (p);
 	return (NULL);
 }

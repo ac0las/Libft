@@ -6,7 +6,7 @@
 #    By: acolas-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/17 16:45:53 by acolas-l          #+#    #+#              #
-#    Updated: 2023/11/08 18:49:32 by acolas-l         ###   ########.fr        #
+#    Updated: 2023/11/15 17:43:23 by acolas-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,9 @@ OBJS = $(SRC:.c=.o)
 all:	$(NAME)
 $(NAME): $(OBJS) 
 	$(AR) $(NAME) $(OBJS)
-bonus:	$(NAME)
 clean:
 	$(RM) $(OBJS)
 fclean: clean
 	$(RM) $(NAME)
 re: fclean all
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

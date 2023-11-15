@@ -6,7 +6,7 @@
 /*   By: acolas-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 18:03:43 by acolas-l          #+#    #+#             */
-/*   Updated: 2023/10/21 12:01:20 by acolas-l         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:38:31 by acolas-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 static void	ft_itoa_conver(long n, char *str, int *i)
 {
+	if (n < 0)
+	{
+		str[(*i)] = '-';
+		(*i)++;
+		n = -n;
+	}
 	if (n >= 10)
 	{
 		ft_itoa_conver(n / 10, str, i);
@@ -31,10 +37,8 @@ static size_t	ft_itoa_len(int n)
 	size_t	len;
 
 	len = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-		len = len + 1;
+	if (n <= 0)
+		len = 1;
 	while (n)
 	{
 		n = n / 10;
@@ -52,17 +56,6 @@ char	*ft_itoa(int n)
 	if (!str)
 		return (NULL);
 	i = 0;
-	if (n == -2147483648)
-	{
-		str[i++] = '-';
-		str[i++] = 2;
-		n = 147483648;
-	}
-	else if (n < 0)
-	{
-		str[i++] = '-';
-		n = n * -1;
-	}
 	ft_itoa_conver(n, str, &i);
 	str[i] = '\0';
 	return (str);
