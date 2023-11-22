@@ -6,7 +6,7 @@
 /*   By: acolas-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:27:39 by acolas-l          #+#    #+#             */
-/*   Updated: 2023/11/20 15:22:38 by acolas-l         ###   ########.fr       */
+/*   Updated: 2023/11/22 17:16:40 by acolas-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	copy_len = dstsize - 1;
 	i = 0;
 	while (i < copy_len && src[i] != '\0')
-	{	
+	{
 		dst[i] = src[i];
 		i++;
 	}

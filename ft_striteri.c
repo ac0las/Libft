@@ -6,7 +6,7 @@
 /*   By: acolas-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:27:20 by acolas-l          #+#    #+#             */
-/*   Updated: 2023/11/08 18:31:32 by acolas-l         ###   ########.fr       */
+/*   Updated: 2023/11/22 17:16:01 by acolas-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	size_t	i;
 
 	if (s && f)
-	{	
+	{
 		i = 0;
 		while (*s)
 		{

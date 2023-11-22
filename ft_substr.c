@@ -6,7 +6,7 @@
 /*   By: acolas-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:25:49 by acolas-l          #+#    #+#             */
-/*   Updated: 2023/10/17 16:37:15 by acolas-l         ###   ########.fr       */
+/*   Updated: 2023/11/22 17:17:01 by acolas-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	ft_strlcpy(substr, s + start, len + 1);
 	return (substr);
-}	
+}
